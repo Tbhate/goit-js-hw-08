@@ -13,32 +13,20 @@ const gallery = document.querySelector(".gallery");
 const pictureLink = document.querySelector(".gallery__link");
 
 // Generate the markup for the gallery items
+
+
+
 const markup = galleryItems
   .map(
     (item) =>
-      `<li class="gallery__item"><a class="gallery__link" href="${item.original}"><img class="gallery__image" src="${item.preview}" data-source="${item.original}" alt="${item.description}"></a></li>`
+      `<li class="gallery__item"><a class="gallery__link" href="${item.original}"><img class="gallery__image" src="${item.preview}" data-source="${item.preview}" alt="${item.description}"></a></li>`
   )
   .join("");
 
 // Insert the markup into the gallery container
 gallery.insertAdjacentHTML("beforeend", markup);
 
-// Add a click event listener to the gallery container
-gallery.addEventListener("click", openOriginal);
 
-// Function to handle opening the original image
-function openOriginal(event) {
-  event.preventDefault();
+// Create an instance of SimpleLightbox
 
-  const target = event.target;
-
-  if (target.nodeName !== "IMG") {
-    return;
-  }
-
-  // Create an instance of SimpleLightbox
-  const lightbox = new SimpleLightbox(target.parentNode);
-
-  // Open the lightbox
-  lightbox.open();
-}
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, });

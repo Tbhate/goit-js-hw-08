@@ -16,7 +16,7 @@ console.log(localStorage)
 
 player.on('timeupdate', throttle(listener, 1000))
 
-const theme = localStorage.getItem("videoplayer-current-time");
+const theme = localStorage.getItem("videoplayer-current-time") || 0;
 
 player.setCurrentTime(theme)
 
