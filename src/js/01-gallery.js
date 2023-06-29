@@ -1,8 +1,5 @@
-// Import the SimpleLightbox module
 import SimpleLightbox from "simplelightbox";
-// Import the SimpleLightbox CSS styles
 import "simplelightbox/dist/simple-lightbox.min.css";
-// Import the galleryItems from the local file
 import { galleryItems } from './gallery-items.js';
 
 // Output the galleryItems to verify it's being imported correctly
@@ -13,8 +10,6 @@ const gallery = document.querySelector(".gallery");
 const pictureLink = document.querySelector(".gallery__link");
 
 // Generate the markup for the gallery items
-
-
 
 const markup = galleryItems
   .map(

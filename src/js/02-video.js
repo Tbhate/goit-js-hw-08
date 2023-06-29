@@ -14,6 +14,7 @@ localStorage.setItem("videoplayer-current-time", JSON.stringify(data.seconds));
 console.log(localStorage)
 }
 
+
 player.on('timeupdate', throttle(listener, 1000))
 
 const theme = localStorage.getItem("videoplayer-current-time") || 0;
